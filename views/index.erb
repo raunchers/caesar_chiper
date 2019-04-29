@@ -1,12 +1,15 @@
+<!DOCTYPE html>
 <html>
     <head></head>
         <body>
             <p>
                 <form>
-                    <input type="text" name="sentence">
-                    <input type="number" name="shift">
+                    <input type="text" name="sentence" value="Enter a sentence">
+                    <input type="number" name="shift" min="0" value="0">
                     <input type="submit" value="encrpyt">
                 </form>
+                <%= "Original string: #{original_string} "%><br>
+                <%= "Encrpyted string: #{garbled_string}" %>
             </p>
         </body>
 </html>

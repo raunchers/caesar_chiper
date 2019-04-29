@@ -1,12 +1,12 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-def caesar_cipher(word, word_shift)
+def caesar_cipher()
     # get sentence
     word = params["sentence"]
 
-    # get shit
-    word_shift = params["shit"].to_i
+    # get shift
+    word_shift = params["shift"].to_i
 
     # Split string
     user_string = word.split('')
@@ -30,5 +30,7 @@ def caesar_cipher(word, word_shift)
 end
 
 get '/' do
-    erb :index
+    original_string = params["sentence"]
+    garbled_string = caesar_cipher()
+    erb :index, :locals => {:original_string => original_string, :garbled_string => garbled_string}
 end
