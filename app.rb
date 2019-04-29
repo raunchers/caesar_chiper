@@ -26,10 +26,9 @@ def caesar_cipher(word, word_shift)
             encrypted_string.push(char)
         end
     end
-    puts encrypted_string.join
+    return encrypted_string.join
 end
 
 get '/' do
-    params.inspect
     erb :index
 end
